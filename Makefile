@@ -51,7 +51,7 @@ LFLAGS = -r
 
 CLFLAGS = -I$(PROTEU) -D$(OS)
 
-CURSES = curses
+CURSES = ncurses
 
 ALL =  li pteste tcase muta exemuta report opmuta util misc btree checkequiv instrum 
 
@@ -469,7 +469,7 @@ tcase-add: $(UTIL)/tcase-ad.c  $(INCLUDEFILE) $(OBJ)/libmuta.o lib  $(OBJ)/libpt
 
 muta-view: $(UTIL)/muta-viw.c $(INCLUDEFILE)  $(OBJ)/libmuta.o \
 	  $(OBJ)/libpteste.o lib 
-	  $(CC) $(CLFLAGS) $(UTIL)/muta-viw.c $(OBJ)/libmuta.o $(OBJ)/libgerais.o $(OBJ)/libpteste.o  -l$(CURSES) -ltermcap -o $(BIN)/muta-view 
+	  $(CC) $(CLFLAGS) $(UTIL)/muta-viw.c $(OBJ)/libmuta.o $(OBJ)/libgerais.o $(OBJ)/libpteste.o  -l$(CURSES) -o $(BIN)/muta-view
 
 list-good: $(UTIL)/list-good.c $(INCLUDEFILE)  $(OBJ)/libmuta.o $(OBJ)/libpteste.o $(OBJ)/libtcase.o lib
 		$(CC) $(CLFLAGS) $(UTIL)/list-good.c $(OBJ)/libmuta.o $(OBJ)/libgerais.o $(OBJ)/libtcase.o $(OBJ)/libpteste.o  -o $(BIN)/list-good
